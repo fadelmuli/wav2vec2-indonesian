@@ -6,8 +6,8 @@ python xlsr.py \
     --cache_dir="/workspace/cache" \
     --overwrite_output_dir \
     --num_train_epochs="60" \
-    --per_device_eval_batch_size="8" \
-    --per_device_train_batch_size="16" \
+    --per_device_eval_batch_size="32" \
+    --per_device_train_batch_size="64" \
     --evaluation_strategy="steps" \
     --learning_rate="1e-4" \
     --warmup_steps="300" \
@@ -25,7 +25,7 @@ python xlsr.py \
     --hidden_dropout="0.047" \
     --mask_time_prob="0.4" \
     --do_train --do_eval \
-    --gradient_accumulation_steps="2" \
+    --gradient_accumulation_steps="1" \
     --dataloader_num_workers="8" \
     --push_to_hub True \
     --gradient_checkpointing \

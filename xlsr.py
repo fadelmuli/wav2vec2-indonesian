@@ -366,11 +366,10 @@ def main():
     if training_args.push_to_hub:
         huggingface_hub.login()
     
-    if training_args.report_to == "wandb":
-        wandb.login()
-        os.environ["WANDB_ENTITY"] = "wandb"
-        os.environ["WANDB_PROJECT"] = "xlsr-indonesian"
-        os.environ["WANDB_LOG_MODEL"] = "true"
+    wandb.login()
+    os.environ["WANDB_ENTITY"] = "wandb"
+    os.environ["WANDB_PROJECT"] = "xlsr-indonesian"
+    os.environ["WANDB_LOG_MODEL"] = "true"
 
     parser = HfArgumentParser(
         (ModelArguments, DataTrainingArguments, TrainingArguments)
